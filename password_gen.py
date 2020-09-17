@@ -1,6 +1,3 @@
-from password_generator import PasswordGenerator
-
-
 class Password:
     """Class to represent a password
 
