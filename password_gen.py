@@ -3,7 +3,6 @@ class Password:
 
     Attributes:
         password (str): The password for the username
-        username (str): The username that owns this password
 
     Methods:
         get_password: Used to return the password
@@ -25,7 +24,7 @@ class Username:
 
     Attributes:
         username (str): The username for this account
-        website_name (str): The name of the website the username belongs to
+        password (str): The password for the username
 
     Methods:
         get_username: Used to return the password
