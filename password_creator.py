@@ -23,3 +23,9 @@ class Creator:
     def password_input():
         return input("Enter the password to your new account (Don't show it to anyone): ")
 
+    @staticmethod
+    def generate_password():
+        pwo = PasswordGenerator()
+        print("Newly generated password: {}".format(pwo))
+        print("NOTE: Make sure you copy this password before you create your new account")
+        return pwo
