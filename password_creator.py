@@ -32,20 +32,22 @@ class Creator:
         return pwo
 
 
-def create_password():
-    website_field = Creator.website_input()
-    username_field = Creator.username_input()
-
+def print_password_menu():
     while True:
         # Menu options for adding a new password
         print("Would you like to:")
         ans = input("\t[1] Enter your own preferred password?"
                     "\n\t[2] Create a randomly generated password? ")
         if ans == '1':
-            password_field = Creator.password_input()
-            break
+            return Creator.password_input()
         elif ans == '2':
-            password_field = Creator.generate_password()
-            break
+            return Creator.generate_password()
         else:
             print("Sorry we didn't get the right response. Please try again")
+
+
+def create_password():
+    website_field = Creator.website_input()
+    username_field = Creator.username_input()
+
+
