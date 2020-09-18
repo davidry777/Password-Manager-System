@@ -19,3 +19,7 @@ class Creator:
     def username_input():
         return input("Enter the username of your new account: ")
 
+    @staticmethod
+    def password_input():
+        return input("Enter the password to your new account (Don't show it to anyone): ")
+
