@@ -62,12 +62,10 @@ class Website:
 
 
 def generate_list():
-    with open("default_accountList.txt", "r") as passwords:
-        lines = passwords.readlines()
-    print(lines)
-
-    for line in lines:
-        print(line, end='')
+    with open("default_accountList.txt", "r") as password_list:
+        for line in password_list:
+            website_field, username_field, password_field = tuple(line.strip('\n').split('/'))
+            print("{}:{}:{}".format(website_field, username_field, password_field))
 
 
 if __name__ == "__main__":
