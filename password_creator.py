@@ -27,9 +27,13 @@ class Creator:
     @staticmethod
     def generate_password():
         pwo = PasswordGenerator()
-        print("Newly generated password: {}".format(pwo))
+        pwo.minlen = 15
+        pwo.maxlen = 15
+        new_password = pwo.generate()
+
+        print("Newly generated password: {}".format(new_password))
         print("NOTE: Make sure you copy this password before you create your new account")
-        return pwo
+        return new_password
 
 
 def print_password_menu():
@@ -37,7 +41,7 @@ def print_password_menu():
         # Menu options for adding a new password
         print("Would you like to:")
         ans = input("""\t[1] Enter your own preferred password?
-                     \n\t[2] Create a randomly generated password?""")
+    [2] Create a randomly generated password?""")
         if ans == '1':
             return Creator.password_input()
         elif ans == '2':
