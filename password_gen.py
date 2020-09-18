@@ -79,7 +79,7 @@ def generate_list():
     with open("default_accountList.txt", "r") as passwords:
         for line in passwords:
             website_field, username_field, password_field = tuple(line.strip('\n').split('/'))
-            print("{}:{}:{}".format(website_field, username_field, password_field))
+            # print("{}:{}:{}".format(website_field, username_field, password_field))
 
             new_website = find_object(website_field, password_list)
             if new_website is None:
