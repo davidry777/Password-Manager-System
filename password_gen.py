@@ -68,7 +68,7 @@ class Website:
 def find_object(field, object_list):
     """Check 'object_list' to see if an object with a 'name' attribute equal to 'field' exists, return it if so."""
     for item in object_list:
-        if item.name == field:
+        if item.website_name == field:
             return item
     return None
 
@@ -89,7 +89,3 @@ def generate_list():
             new_website.create_username(username_field, password_field)
 
     return password_list
-
-
-if __name__ == "__main__":
-    generate_list()
