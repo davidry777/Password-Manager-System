@@ -59,3 +59,16 @@ class Website:
 
     def get_website(self):
         return self.username
+
+
+def generate_list():
+    with open("default_accountList.txt", "r") as passwords:
+        lines = passwords.readlines()
+    print(lines)
+
+    for line in lines:
+        print(line, end='')
+
+
+if __name__ == "__main__":
+    generate_list()
