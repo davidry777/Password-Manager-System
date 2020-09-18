@@ -60,9 +60,10 @@ class Website:
     def get_website(self):
         return self.website_name
 
-    def create_username(self, username):
-        account = Username(username)
+    def create_username(self, username, password):
+        account = Username(username, password)
         self.usernames.append(account)
+
 
 def find_object(field, object_list):
     """Check 'object_list' to see if an object with a 'name' attribute equal to 'field' exists, return it if so."""
@@ -73,10 +74,21 @@ def find_object(field, object_list):
 
 
 def generate_list():
+    password_list = []
+
     with open("default_accountList.txt", "r") as passwords:
         for line in passwords:
             website_field, username_field, password_field = tuple(line.strip('\n').split('/'))
             print("{}:{}:{}".format(website_field, username_field, password_field))
+
+            new_website = find_object(website_field, password_list)
+            if new_website is None:
+                new_website = Website(website_field)
+                password_list.append(new_website)
+
+            new_website.create_username(username_field, password_field)
+
+    return password_list
 
 
 if __name__ == "__main__":
