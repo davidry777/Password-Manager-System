@@ -10,9 +10,8 @@ class Password:
         set_password: Used to set a new password to the user's account
     """
 
-    def __init__(self, password, username):
+    def __init__(self, password):
         self.password = password
-        self.username = username
 
     def get_password(self):
         return self.password
@@ -33,15 +32,16 @@ class Username:
         set_username: Used to set a new password to the user's account
     """
 
-    def __init__(self, username, website_name):
+    def __init__(self, username, password=None):
         self.username = username
-        self.website_name = website_name
+        self.password = Password(password)
 
     def get_username(self):
         return self.username
 
     def set_username(self, new_username):
         self.username = new_username
+
 
 
 class Website:
@@ -56,14 +56,19 @@ class Website:
 
     def __init__(self, website_name):
         self.website_name = website_name
+        self.usernames = []
 
     def get_website(self):
-        return self.username
+        return self.website_name
+
+    def create_username(self, username):
+        account = Username(username)
+        self.usernames.append(account)
 
 
 def generate_list():
-    with open("default_accountList.txt", "r") as password_list:
-        for line in password_list:
+    with open("default_accountList.txt", "r") as passwords:
+        for line in passwords:
             website_field, username_field, password_field = tuple(line.strip('\n').split('/'))
             print("{}:{}:{}".format(website_field, username_field, password_field))
 
