@@ -1,4 +1,4 @@
-from password_gen import Website
+from password_gen import find_object, Website
 from password_generator import PasswordGenerator
 
 
@@ -46,8 +46,14 @@ def print_password_menu():
             print("Sorry we didn't get the right response. Please try again")
 
 
-def create_password():
+def create_password(password_list):
     website_field = Creator.website_input()
     username_field = Creator.username_input()
+    password_field = print_password_menu()
 
+    new_password = find_object(website_field, password_list)
+    if new_password is None:
+        new_password = Website(website_field)
+        password_list.append(new_password)
 
+    new_password.create_username(username_field, password_field)

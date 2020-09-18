@@ -81,11 +81,11 @@ def generate_list():
             website_field, username_field, password_field = tuple(line.strip('\n').split('/'))
             # print("{}:{}:{}".format(website_field, username_field, password_field))
 
-            new_website = find_object(website_field, password_list)
-            if new_website is None:
-                new_website = Website(website_field)
-                password_list.append(new_website)
+            new_password = find_object(website_field, password_list)
+            if new_password is None:
+                new_password = Website(website_field)
+                password_list.append(new_password)
 
-            new_website.create_username(username_field, password_field)
+            new_password.create_username(username_field, password_field)
 
     return password_list
