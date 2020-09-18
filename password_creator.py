@@ -1,4 +1,4 @@
-from password_gen import Website, Username, Password
+from password_gen import Website
 from password_generator import PasswordGenerator
 
 
@@ -11,6 +11,7 @@ class Creator:
         password_input (str): Receives user input for the password of their new account
         generate_password (str): Creates a randomly generated password using the PasswordGenerator library
     """
+
     @staticmethod
     def website_input():
         return input("Enter the link of the website your new account belongs to\n ('Website name'.'Domain'): ")
@@ -29,3 +30,22 @@ class Creator:
         print("Newly generated password: {}".format(pwo))
         print("NOTE: Make sure you copy this password before you create your new account")
         return pwo
+
+
+def create_password():
+    website_field = Creator.website_input()
+    username_field = Creator.username_input()
+
+    while True:
+        # Menu options for adding a new password
+        print("Would you like to:")
+        ans = input("\t[1] Enter your own preferred password?"
+                    "\n\t[2] Create a randomly generated password? ")
+        if ans == '1':
+            password_field = Creator.password_input()
+            break
+        elif ans == '2':
+            password_field = Creator.generate_password()
+            break
+        else:
+            print("Sorry we didn't get the right response. Please try again")
