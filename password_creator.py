@@ -36,11 +36,11 @@ def print_password_menu():
     while True:
         # Menu options for adding a new password
         print("Would you like to:")
-        ans = input("\t[1] Enter your own preferred password?"
-                    "\n\t[2] Create a randomly generated password? ")
-        if ans == '1':
+        ans = input("""\t[1] Enter your own preferred password?
+                     \n\t[2] Create a randomly generated password?""")
+        if ans == 1:
             return Creator.password_input()
-        elif ans == '2':
+        elif ans == 2:
             return Creator.generate_password()
         else:
             print("Sorry we didn't get the right response. Please try again")
@@ -57,3 +57,5 @@ def create_password(password_list):
         password_list.append(new_password)
 
     new_password.create_username(username_field, password_field)
+
+    return password_list
