@@ -11,4 +11,7 @@ class Creator:
         password_input (str): Receives user input for the password of their new account
         generate_password (str): Creates a randomly generated password using the PasswordGenerator library
     """
+    @staticmethod
+    def website_input():
+        return input("Enter the link of the website your new account belongs to\n ('Website name'.'Domain'): ")
 
