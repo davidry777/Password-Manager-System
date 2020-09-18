@@ -15,3 +15,7 @@ class Creator:
     def website_input():
         return input("Enter the link of the website your new account belongs to\n ('Website name'.'Domain'): ")
 
+    @staticmethod
+    def username_input():
+        return input("Enter the username of your new account: ")
+
