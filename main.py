@@ -26,5 +26,7 @@ if __name__ == "__main__":
             print("The password is {}\n".format(password_helper.find_password(password_list).get_password()))
         elif ans == '4':
             password_helper.change_password(password_list)
+        elif ans == '5':
+            password_helper.change_username(password_list)
         else:
             break

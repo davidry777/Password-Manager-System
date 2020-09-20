@@ -7,11 +7,21 @@ class PasswordKeeper:
         password_changer = self.find_password(password_list)
 
         while True:
-            ans = input("Enter your new password:")
+            ans = input("Please enter your new password:")
             if ans != "":
                 password_changer.set_password(ans)
                 break
             print("You have not entered your new password. Please try again.\n")
+
+    def change_username(self, password_list):
+        username_changer = self.find_username(usernames=None, password_list)
+
+        while True:
+            ans = input("Please enter your new username:")
+            if ans != "":
+                username_changer.set_username(ans)
+                break
+            print("You have not entered your new username. Please try again.\n")
 
     def find_password(self, password_list):
         while True:
