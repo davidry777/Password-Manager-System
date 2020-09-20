@@ -29,4 +29,4 @@ if __name__ == "__main__":
         elif ans == '5':
             password_helper.change_username(password_list)
         else:
-            break
+            exit()
