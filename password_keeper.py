@@ -14,6 +14,7 @@ class PasswordKeeper:
             ans = input("Please enter your new password:")
             if ans != "":
                 password_changer.set_password(ans)
+                print("Your new password is {}\n".format(password_changer.get_password()))
                 break
             print("You have not entered your new password. Please try again.\n")
 
