@@ -63,3 +63,15 @@ def print_menu():
     print("[5] Change username")
     print("[0] Quit")
     print("-----------------------------")
+
+
+def print_list(password_list):
+    print("PASSWORD LIST:")
+    print("[website]\n\t[username]\n\t\t[password]\n")
+
+    for website in password_list:
+        print("{}".format(website.get_website()))
+        for username in website.usernames:
+            print("\t{}".format(username.get_username()))
+            password = username.password
+            print("\t\t{}".format(password.get_password()))

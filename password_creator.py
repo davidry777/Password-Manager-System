@@ -63,6 +63,6 @@ def create_password(password_list):
 
     new_password.create_username(username_field, password_field)
 
-    print("NEW PASSWORD ADDED!")
+    print("NEW PASSWORD ADDED!\n")
 
     return password_list
