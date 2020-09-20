@@ -26,14 +26,14 @@ class Creator:
 
     @staticmethod
     def generate_password():
-        pwo = PasswordGenerator()
-        pwo.minlen = 15
+        pwo = PasswordGenerator()   # pwo, a PasswordGenerator object, is in charge of generating a new random password
+        pwo.minlen = 15     # Sets the password length to 15 characters
         pwo.maxlen = 15
-        new_password = pwo.generate()
+        new_password = pwo.generate()   # Generates a random password
 
         print("Newly generated password: {}".format(new_password))
         print("NOTE: Make sure you copy this password before you create your new account")
-        return new_password
+        return new_password     # returns the generated password
 
 
 def print_password_menu():
@@ -44,25 +44,28 @@ def print_password_menu():
         print("\t[2] Create a randomly generated password?")
         ans = input("Please enter: ")
         if ans == '1':
+            # If user inputs '1', the user gets to input the new password and returns it
             return Creator.password_input()
         elif ans == '2':
+            # If user inputs '2', the program gives the user a randomly generated password and returns it
             return Creator.generate_password()
         else:
-            print("Sorry we didn't get the right response. Please try again")
+            print("Sorry we didn't get the right response. Please try again")   # If no given response, menu loops
 
 
 def create_password(password_list):
+    # Different fields that the user must input to create a new password
     website_field = Creator.website_input()
     username_field = Creator.username_input()
     password_field = print_password_menu()
 
-    new_password = find_object(website_field, password_list)
+    new_password = find_object(website_field, password_list)    # Program checks if the website already exists in the list
     if new_password is None:
-        new_password = Website(website_field)
+        new_password = Website(website_field)   # If given website doesn't exist, the new website is added to the list
         password_list.append(new_password)
 
-    new_password.create_username(username_field, password_field)
+    new_password.create_username(username_field, password_field)    # Under that website, a new username and password is created
 
-    print("NEW PASSWORD ADDED!\n")
+    print("NEW PASSWORD ADDED!\n")  # User gets notified that new password is added
 
-    return password_list
+    return password_list    # returns the password list back to main.py
