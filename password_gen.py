@@ -19,7 +19,7 @@ class Password:
         self.password = new_password
 
 
-class Username:
+class Username(object):
     """Class that represents the websites account(the Username)
 
     Attributes:
@@ -42,8 +42,7 @@ class Username:
         self.username = new_username
 
 
-
-class Website:
+class Website(object):
     """Class that represents the websites account(the Username)
 
     Attributes:
