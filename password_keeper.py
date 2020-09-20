@@ -67,7 +67,7 @@ def print_menu():
     print("[2] Print password list")
     print("[3] Search for password")
     print("[4] Change a password")
-    print("[5] Change username")
+    print("[5] Change a username")
     print("[0] Quit")
     print("-----------------------------")
 
