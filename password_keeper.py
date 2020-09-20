@@ -5,14 +5,13 @@ class PasswordKeeper:
 
     def find_password(self, password_list):
         while True:
-            ans1 = input("To get password, please enter the website: ")
-            website = find_object(ans1, password_list)
+            ans = input("To get password, please enter the website: ")
+            website = find_object(ans, password_list)
             if website is not None:
-                website = Website(ans1)
+                website = Website(ans)
                 username = find_username(website.usernames)
             else:
                 print("The website you entered is not in our list. Please try again")
-
 
     def find_username(self, usernames, password_list=None):
         if password_list is None:
@@ -22,6 +21,12 @@ class PasswordKeeper:
                 website = Website(ans1)
                 usernames = website.usernames
 
+        while True:
+            ans2 = input("Enter the username: ")
+            for username in usernames:
+                if ans2 == username.get_username():
+                    return username
+            print("Couldn't find username. Please try again.\n")
 
 
 def print_menu():
