@@ -40,8 +40,9 @@ def print_password_menu():
     while True:
         # Menu options for adding a new password
         print("Would you like to:")
-        ans = input("""\t[1] Enter your own preferred password?
-    [2] Create a randomly generated password?""")
+        print("\t[1] Enter your own preferred password?")
+        print("\t[2] Create a randomly generated password?")
+        ans = input("Please enter: ")
         if ans == '1':
             return Creator.password_input()
         elif ans == '2':
