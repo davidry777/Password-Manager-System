@@ -23,6 +23,8 @@ if __name__ == "__main__":
                     password = username.password
                     print("\t\t{}".format(password.get_password()))
         elif ans == '3':
-            print("The password is {}\n".format(password_helper.find_password(password_list)))
+            print("The password is {}\n".format(password_helper.find_password(password_list).get_password()))
+        elif ans == '4':
+            password_helper.change_password(password_list)
         else:
             break

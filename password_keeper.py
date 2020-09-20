@@ -3,13 +3,23 @@ from password_gen import Website, Username, Password, find_object
 
 class PasswordKeeper:
 
+    def change_password(self, password_list):
+        password_changer = self.find_password(password_list)
+
+        while True:
+            ans = input("Enter your new password:")
+            if ans != "":
+                password_changer.set_password(ans)
+                break
+            print("You have not entered your new password. Please try again.\n")
+
     def find_password(self, password_list):
         while True:
             ans = input("To get password, please enter the website: ")
             website = find_object(ans, password_list)
             if website is not None:
                 username = self.find_username(website.usernames, password_list=None)
-                return username.password.get_password()
+                return username.password
             else:
                 print("The website you entered is not in our list. Please try again")
 
