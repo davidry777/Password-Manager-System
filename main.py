@@ -1,5 +1,6 @@
 from password_gen import generate_list
 from password_creator import create_password
+from password_keeper import print_menu
 
 if __name__ == "__main__":
     password_list = generate_list()
@@ -9,10 +10,7 @@ if __name__ == "__main__":
     print("***********************************")
 
     while True:
-        print("""----------------------------------------------------------\n
-            [1] Create a new password\n
-            [2] Print list\n
------------------------------------------------------------""")
+        print_menu()
         ans = input("Enter: ")
         if ans == '1':
             password_list = create_password(password_list)
