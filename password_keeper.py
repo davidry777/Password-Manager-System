@@ -8,17 +8,16 @@ class PasswordKeeper:
             ans = input("To get password, please enter the website: ")
             website = find_object(ans, password_list)
             if website is not None:
-                website = Website(ans)
-                username = find_username(website.usernames)
+                username = self.find_username(website.usernames, password_list=None)
+                return username.password.get_password()
             else:
                 print("The website you entered is not in our list. Please try again")
 
-    def find_username(self, usernames, password_list=None):
-        if password_list is None:
-            ans1 = input("To get password, please enter the website: ")
+    def find_username(self, usernames, password_list):
+        if password_list is not None:
+            ans1 = input("To get username, please enter the website: ")
             website = find_object(ans1, password_list)
             if website is not None:
-                website = Website(ans1)
                 usernames = website.usernames
 
         while True:
