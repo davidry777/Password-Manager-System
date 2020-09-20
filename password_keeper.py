@@ -1,4 +1,4 @@
-from password_gen import Website, Username, Password, find_object
+from password_gen import find_object
 
 
 class PasswordKeeper:
@@ -14,7 +14,8 @@ class PasswordKeeper:
             print("You have not entered your new password. Please try again.\n")
 
     def change_username(self, password_list):
-        username_changer = self.find_username(usernames=None, password_list)
+        default_usernames = []
+        username_changer = self.find_username(default_usernames, password_list)
 
         while True:
             ans = input("Please enter your new username:")
