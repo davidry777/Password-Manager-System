@@ -27,7 +27,7 @@ create a Username. Every time a Username gets created, it will be appended to th
 Every Username will also have a Password, so the Password gets created along with the Username.
 
 For visual here's how it would look:
-##Put password_list diagram##
+![Diagram](https://github.com/davidry777/Password-Manager-System/blob/master/Images/password_list%20diagram.png)
 
 *Generating a Password List*
 
@@ -59,13 +59,16 @@ if, elif, and else statements are used to run the functions the user chooses.
 ### Running the Program
 
 The inital menu the user sees is this:
-##insert menu##
+![Image of Menu](https://github.com/davidry777/Password-Manager-System/blob/master/Images/menu.png)
 
 Adding a password would look like this:
-##insert creating password##
+![Image of Adding a Password](https://github.com/davidry777/Password-Manager-System/blob/master/Images/creating_password.png)
+
+Changing a password looks like this:
+![Image of Changing a Password](https://github.com/davidry777/Password-Manager-System/blob/master/Images/changing_password.png)
 
 Changing a username looks like this:
-##insert changing password##
+![Image of Changing a Username](https://github.com/davidry777/Password-Manager-System/blob/master/Images/changing_username.png)
 
 Printing the Password List in the system looks like this:
-##insert changing password##
+![Image of Printing the Password List](https://github.com/davidry777/Password-Manager-System/blob/master/Images/print_list.png)
