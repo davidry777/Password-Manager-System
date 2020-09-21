@@ -27,6 +27,7 @@ create a Username. Every time a Username gets created, it will be appended to th
 Every Username will also have a Password, so the Password gets created along with the Username.
 
 For visual here's how it would look:
+
 ![Diagram](https://github.com/davidry777/Password-Manager-System/blob/master/Images/password_list%20diagram.png)
 
 *Generating a Password List*
