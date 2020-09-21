@@ -33,6 +33,7 @@ class PasswordKeeper:
             ans = input("Please enter your new username:")      # Asks user to input new username
             if ans != "":
                 username_changer.set_username(ans)  # Sets the new username
+                print("Your new username is {}\n".format(username_changer.get_username()))      # Notifies user that new username is added
                 break
             print("You have not entered your new username. Please try again.\n")    # If username is not entered properly, it loops back
 
