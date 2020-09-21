@@ -1,4 +1,4 @@
-# Password Management System
+# Password Manager System
 
 ### Description
 
